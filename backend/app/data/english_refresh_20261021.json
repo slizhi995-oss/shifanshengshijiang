@@ -1,0 +1,32 @@
+[
+  {
+    "filename": "小学英语五年级上册.pdf",
+    "sha256": "b47ee47d590565e4d5644cdca3f5f7bebae09289833b54dcd865fb4bcf361c44",
+    "replaces": "23e347d258a8bf80b6f8b813edff7ba6c6a9a74033dfcb424e78cb9a26b54017",
+    "chapters": 6
+  },
+  {
+    "filename": "小学英语五年级下册.pdf",
+    "sha256": "300cc235eef8705807355496ae9f8b95a3718d4e947e9d2ffc9d52d45e8235db",
+    "replaces": "dd7c53639a9e54dc36b552ec92dab0443536c4ea3c80842c3fa3dd7c2ef5ef1e",
+    "chapters": 6
+  },
+  {
+    "filename": "小学英语六年级上册.pdf",
+    "sha256": "e2a5fdda9147dc91e0b7afc5bf451459d6eb84d96d858629efd31ba7bb583763",
+    "replaces": "121e4bed4640c818a43be345029536b16a1ea26e300be0f1727a25ac1ecc182a",
+    "chapters": 6
+  },
+  {
+    "filename": "小学英语六年级下册.pdf",
+    "sha256": "125831084793f9df01f90b2fb7bcf2f0850b209daa74abbf74661e16b0c0ce27",
+    "replaces": "0411b214adcca507dd9699d5872cf173a2c226a16e11655717f199b483f38d91",
+    "chapters": 4
+  },
+  {
+    "filename": "初中英语九年级上册.pdf",
+    "sha256": "25538732ec8a26780cfad5984fea5bccd7c755aa3a78686e8b10c1f8e2863de0",
+    "replaces": "eed40cb54f3c5a2680a5ca039bdca05410eb87a662eedb57dd25f18d02c37712",
+    "chapters": 24
+  }
+]

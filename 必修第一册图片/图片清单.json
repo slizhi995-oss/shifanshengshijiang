@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "source": {
+    "file": "D:\\27计算机设计大赛\\shijiang\\物理必修第一册.pdf",
+    "sha256": "b0a84622a6ddc13c693ace0c5f4c8e906d7343ce2da47aa5ff396d063b88052a",
+    "textbook": "普通高中教科书 物理 必修 第一册",
+    "publisher": "人民教育出版社",
+    "curriculum_basis": null,
+    "review_year": null,
+    "afterword_date": null,
+    "exact_edition_printing_and_isbn": null,
+    "edition_note": "已核对牛顿第一定律全部页面；本轮未核对版次、印次或ISBN。",
+    "page_count": 134,
+    "text_layer": true,
+    "scan_size": null,
+    "chapter_pdf_pages": {
+      "牛顿第一定律": [
+        88,
+        92
+      ]
+    }
+  },
+  "not_published_to_catalog": true,
+  "figures": [
+    {
+      "id": "physics-compulsory-1-p079-skating",
+      "pdf_page": 88,
+      "printed_page": 83,
+      "bbox_native_pixels": null,
+      "title": "滑冰运动员情境图",
+      "figure_number": null,
+      "chapter": "第四章 运动和力的关系",
+      "section": "1. 牛顿第一定律",
+      "description": "教材开篇问题中的滑冰运动员图片，用于讨论运动员不用力后逐渐停下是否与牛顿第一定律矛盾。",
+      "tags": [
+        "高中物理",
+        "人教版",
+        "必修第一册",
+        "牛顿第一定律",
+        "滑冰",
+        "摩擦",
+        "问题导入"
+      ],
+      "image_type": "情境照片",
+      "caption_in_crop": false,
+      "conditions_and_limits": "原图没有图号；不能据此宣称运动员完全不受外力。",
+      "embedded_image_index": 3,
+      "output_name": "01_滑冰运动员.png",
+      "file": "D:\\27计算机设计大赛\\shijiang\\必修第一册图片\\01_滑冰运动员.png",
+      "native_pixel_size": [
+        211,
+        244
+      ],
+      "source_scan_pixel_size": null,
+      "embedded_image_name": "Im1.jp2",
+      "bbox_origin": null,
+      "bbox_normalized": null,
+      "source_pdf_page_size_points": [
+        595.2750599999999,
+        841.89006
+      ],
+      "extraction_method": "native_embedded_image",
+      "upscaled": false,
+      "quality_note": "直接解码PDF内嵌原图，保留原始像素，不放大；图号和图注记录在清单中。",
+      "review_status": "extraction_visually_checked_not_published",
+      "license": null,
+      "license_note": "教材出版物；用户提供文件不代表已获得公开传播授权，具体授权未核实。"
+    },
+    {
+      "id": "physics-compulsory-1-fig-4-1-1",
+      "pdf_page": 89,
+      "printed_page": 84,
+      "bbox_native_pixels": null,
+      "title": "伽利略斜面实验频闪照片",
+      "figure_number": "图4.1-1",
+      "chapter": "第四章 运动和力的关系",
+      "section": "1. 牛顿第一定律",
+      "description": "现代人所做伽利略斜面实验的频闪照片（组合图）。用于分析斜面实验、摩擦与理想实验的推理。",
+      "tags": [
+        "高中物理",
+        "人教版",
+        "必修第一册",
+        "牛顿第一定律",
+        "伽利略",
+        "斜面实验",
+        "理想实验",
+        "频闪照片"
+      ],
+      "image_type": "实验照片",
+      "caption_in_crop": false,
+      "conditions_and_limits": "真实实验照片不能直接等同于完全无摩擦实验；无摩擦结论需要理想实验推理。",
+      "embedded_image_index": 0,
+      "output_name": "02_图4.1-1_伽利略斜面实验.png",
+      "file": "D:\\27计算机设计大赛\\shijiang\\必修第一册图片\\02_图4.1-1_伽利略斜面实验.png",
+      "native_pixel_size": [
+        434,
+        253
+      ],
+      "source_scan_pixel_size": null,
+      "embedded_image_name": "Im0.jpg",
+      "bbox_origin": null,
+      "bbox_normalized": null,
+      "source_pdf_page_size_points": [
+        595.2750599999999,
+        841.89006
+      ],
+      "extraction_method": "native_embedded_image",
+      "upscaled": false,
+      "quality_note": "直接解码PDF内嵌原图，保留原始像素，不放大；图号和图注记录在清单中。",
+      "review_status": "extraction_visually_checked_not_published",
+      "license": null,
+      "license_note": "教材出版物；用户提供文件不代表已获得公开传播授权，具体授权未核实。"
+    },
+    {
+      "id": "physics-compulsory-1-p081-newton",
+      "pdf_page": 90,
+      "printed_page": 85,
+      "bbox_native_pixels": null,
+      "title": "牛顿肖像",
+      "figure_number": null,
+      "chapter": "第四章 运动和力的关系",
+      "section": "1. 牛顿第一定律",
+      "description": "教材中的牛顿（Isaac Newton，1643—1727）肖像及说明，用于物理学史介绍。",
+      "tags": [
+        "高中物理",
+        "人教版",
+        "必修第一册",
+        "牛顿",
+        "牛顿第一定律",
+        "物理学史"
+      ],
+      "image_type": "人物肖像",
+      "caption_in_crop": false,
+      "conditions_and_limits": "用于人物与历史介绍；不是受力示意图或实验过程。",
+      "embedded_image_index": 0,
+      "output_name": "03_牛顿肖像.png",
+      "file": "D:\\27计算机设计大赛\\shijiang\\必修第一册图片\\03_牛顿肖像.png",
+      "native_pixel_size": [
+        177,
+        215
+      ],
+      "source_scan_pixel_size": null,
+      "embedded_image_name": "Im0.jpg",
+      "bbox_origin": null,
+      "bbox_normalized": null,
+      "source_pdf_page_size_points": [
+        595.2750599999999,
+        841.89006
+      ],
+      "extraction_method": "native_embedded_image",
+      "upscaled": false,
+      "quality_note": "直接解码PDF内嵌原图，保留原始像素，不放大；图号和图注记录在清单中。",
+      "review_status": "extraction_visually_checked_not_published",
+      "license": null,
+      "license_note": "教材出版物；用户提供文件不代表已获得公开传播授权，具体授权未核实。"
+    },
+    {
+      "id": "physics-compulsory-1-fig-4-1-2",
+      "pdf_page": 91,
+      "printed_page": 86,
+      "bbox_native_pixels": null,
+      "title": "纸面上的小钢球与惯性参考系",
+      "figure_number": "图4.1-2",
+      "chapter": "第四章 运动和力的关系",
+      "section": "1. 牛顿第一定律",
+      "description": "桌面上的纸与小钢球，手拉纸的一端。教材用迅速拉动与只关注纸和钢球两种观察来讨论惯性参考系。",
+      "tags": [
+        "高中物理",
+        "人教版",
+        "必修第一册",
+        "牛顿第一定律",
+        "惯性参考系",
+        "参考系",
+        "小钢球",
+        "拉纸实验"
+      ],
+      "image_type": "实验照片",
+      "caption_in_crop": false,
+      "conditions_and_limits": "教材物体是小钢球；拉纸速度与所选参考系影响分析，不能不说明条件便用于其他惯性实验。",
+      "embedded_image_index": 4,
+      "output_name": "04_图4.1-2_小钢球与纸片.png",
+      "file": "D:\\27计算机设计大赛\\shijiang\\必修第一册图片\\04_图4.1-2_小钢球与纸片.png",
+      "native_pixel_size": [
+        286,
+        191
+      ],
+      "source_scan_pixel_size": null,
+      "embedded_image_name": "Im3.jpg",
+      "bbox_origin": null,
+      "bbox_normalized": null,
+      "source_pdf_page_size_points": [
+        595.2750599999999,
+        841.89006
+      ],
+      "extraction_method": "native_embedded_image",
+      "upscaled": false,
+      "quality_note": "直接解码PDF内嵌原图，保留原始像素，不放大；图号和图注记录在清单中。",
+      "review_status": "extraction_visually_checked_not_published",
+      "license": null,
+      "license_note": "教材出版物；用户提供文件不代表已获得公开传播授权，具体授权未核实。"
+    }
+  ]
+}

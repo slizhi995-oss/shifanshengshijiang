@@ -1,0 +1,240 @@
+# 1. 依赖包目录（前端核心忽略项）
+node_modules/
+# pnpm 存储目录
+pnpm-store/
+# yarn 缓存
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# 2. 构建/打包产物
+dist/
+build/
+out/
+dist-ssr/
+*.local
+
+
+# 4. 日志与临时文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+tmp/
+private_textbooks/
+private_trial_videos/
+temp/
+
+# 5. 编辑器/IDE 配置（按需保留）
+.idea/
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 6. 缓存文件
+.eslintcache
+.stylelintcache
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+
+# 7. 测试相关
+/coverage/
+/jest/
+/nyc_output/
+
+# 8. 其他工具生成文件
+*.tgz
+# 注意：lock文件（package-lock.json 等）建议提交，此处注释掉，如需忽略可取消注释
+# （lock文件能保证团队依赖版本一致，通常不忽略）
+
+# 9. TypeScript 编译产物
+*.tsbuildinfo
+/tsconfig.tsbuildinfo
+*.js.map
+*.d.ts.map
+
+
+# 1. 虚拟环境（核心忽略项）
+# venv（标准虚拟环境）
+venv/
+env/
+ENV/
+# conda 环境
+.conda/
+# pipenv 环境
+.venv/
+# poetry 环境
+.poetry/
+# pyenv 版本管理
+.python-version
+
+# 2. Python 编译/缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+# 编译后的扩展模块
+*.so
+# 字节码文件（Python 2）
+*.pyc
+# 缓存目录
+.pytest_cache/
+.coverage
+htmlcov/
+.pytest_cache/
+.benchmarks/
+
+
+# 配置文件（含敏感信息）
+config/local.py
+config/settings/local.py
+secrets.json
+*.pem
+*.key
+
+# Docker Compose 环境变量（含 API Key、数据库密码等敏感信息）
+# 请使用 .env.example 作为模板，复制为 .env 后填写实际值
+.env
+backend/.env
+
+# 4. 日志与临时文件
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+# 操作系统临时文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 5. 编辑器/IDE 配置
+.idea/
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+# Vim
+*.vim
+
+# 6. 打包/分发产物
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+*.whl
+*.tar.gz
+*.zip
+*.7z
+# setuptools 缓存
+*.egg-info/
+
+# 7. 数据分析/科学计算相关
+# Jupyter Notebook 检查点
+.ipynb_checkpoints/
+# 大型数据文件
+*.csv.bak
+*.xlsx.bak
+data/raw/
+data/interim/
+data/processed/
+# 注意：若项目需共享示例数据，可保留 data/sample/ 并忽略其他数据目录
+
+# 8. 测试/覆盖率相关
+coverage.xml
+nosetests.xml
+.pytest_cache/
+.coverage
+htmlcov/
+.nyc_output/
+
+# 9. 其他工具生成文件
+# mypy 类型检查缓存
+.mypy_cache/
+.dmypy.json
+dmypy.json
+# black 格式化缓存
+.black/
+# isort 缓存
+.isort.cfg
+.isort/
+
+# Cursor Helper Version: 0.1.5
+# Cursor Helper AI 相关文件
+# 忽略 .cursor/commands 目录（Cursor 命令文件）
+.cursor/commands/
+
+# cursor-helper 目录：只允许提交报告文件
+# 忽略所有 diff 目录（临时文件）
+cursor-helper/**/diff/
+
+# 忽略所有 docs 目录（PRD和技术方案文档）
+cursor-helper/**/docs/
+
+# 忽略 rule_improvements.md（临时规则优化建议文件）
+cursor-helper/**/rule_improvements.md
+
+# 忽略 fix 目录下的修复计划文件（临时文件）
+cursor-helper/**/fix/fix_plan.md
+
+# 忽略评审报告中的 files 目录（详细的文件评审报告，diff 报告）
+cursor-helper/**/review/reports/files/
+
+# 备份文件（.bak）
+# ⚠️ 重要提示：如果因为 Cursor 无法访问文件而通过文件操作命令修改文件时，可能会遗留 .bak 备份文件
+# 这些备份文件应该被忽略，请记得及时删除遗留的 .bak 文件
+*.bak
+
+# 保留所有报告文件：
+# - cursor-helper/**/review/reports/summary/** （总结性评审报告）
+# - cursor-helper/**/fix/fix_report.md （修复报告）
+# - cursor-helper/**/organize-rules/** （规则整理报告）
+
+# Team handoff: share source and templates; transfer runtime resources separately.
+.env*
+!.env.example
+!.env.*.example
+production.env
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+outputs/
+test-results/
+backend/uploads/
+教材/
+音频源文件/

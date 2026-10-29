@@ -1,0 +1,6 @@
+# Optional offline textbook maintenance; not required by the running API.
+rapidocr_onnxruntime==1.4.4
+onnxruntime==1.20.1
+numpy==1.26.4
+protobuf==3.20.3
+opencv-python==4.9.0.80

@@ -1,0 +1,91 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-shijiang}
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: shijiang-backend:latest
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "1"]
+    restart: unless-stopped
+    environment:
+      # 1. 改为 asyncmy 驱动，彻底解决 aiomysql 的 ping 崩溃问题
+      DATABASE_URL: mysql+asyncmy://root:${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}@mysql:3306/${MYSQL_DATABASE:-shijiang}
+      DATABASE_ECHO: "false"
+      DEBUG: ${DEBUG:-false}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-please-change-this-secret-key-in-production}
+      JWT_ACCESS_TOKEN_EXPIRE_MINUTES: ${JWT_ACCESS_TOKEN_EXPIRE_MINUTES:-1440}
+      # 2. 默认跨域加上 3000 端口
+      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:3000","http://127.0.0.1:3000","http://localhost","http://127.0.0.1"]}
+      UPLOAD_DIR: /app/uploads
+      TEXTBOOK_STORAGE_DIR: /app/private_textbooks
+      AUDIO_SOURCE_DIR: /app/audio_sources
+      TRIAL_VIDEO_STORAGE_DIR: /app/private_trial_videos
+      TRIAL_VIDEO_MAX_BYTES: ${TRIAL_VIDEO_MAX_BYTES:-1073741824}
+      TRIAL_VIDEO_USER_BYTES: ${TRIAL_VIDEO_USER_BYTES:-1073741824}
+      TRIAL_VIDEO_TOTAL_BYTES: ${TRIAL_VIDEO_TOTAL_BYTES:-21474836480}
+      TRIAL_VIDEO_PRIVATE_DAYS: ${TRIAL_VIDEO_PRIVATE_DAYS:-15}
+      MAX_FILE_SIZE: ${MAX_FILE_SIZE:-524288000}
+      # AI 配置
+      AI_ENABLED: ${AI_ENABLED:-true}
+      BOCHA_API_KEY: ${BOCHA_API_KEY:-}
+      BOCHA_BASE_URL: ${BOCHA_BASE_URL:-https://api.bochaai.com}
+      VIDEO_SEARCH_ENABLED: ${VIDEO_SEARCH_ENABLED:-true}
+      VIDEO_SEARCH_CACHE_HOURS: ${VIDEO_SEARCH_CACHE_HOURS:-24}
+      AI_PROVIDER: ${AI_PROVIDER:-dashscope}
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY}
+      DASHSCOPE_MODEL: ${DASHSCOPE_MODEL:-qwen-plus}
+      DASHSCOPE_AUDIO_MODEL: ${DASHSCOPE_AUDIO_MODEL:-qwen-omni-turbo}
+      DASHSCOPE_VISION_MODEL: ${DASHSCOPE_VISION_MODEL:-qwen-vl-max}
+      AI_MAX_TOKENS: ${AI_MAX_TOKENS:-4096}
+      AI_TEMPERATURE: ${AI_TEMPERATURE:-0.7}
+      # 视频分析配置
+      VIDEO_ANALYSIS_PROVIDER: ${VIDEO_ANALYSIS_PROVIDER:-dashscope}
+      ENABLE_GESTURE_ANALYSIS: ${ENABLE_GESTURE_ANALYSIS:-true}
+      USE_CLOUD_VISION: ${USE_CLOUD_VISION:-true}
+    # command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+    volumes:
+      - uploads_data:/app/uploads
+      - textbooks_data:/app/private_textbooks
+      - trial_videos_data:/app/private_trial_videos
+      - ./backend:/app
+      - ./音频源文件:/app/audio_sources:ro
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: shijiang-frontend:latest
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    # 如果本地没有放置实际证书，建议先注释掉 443 和 ssl 卷挂载，防止 Nginx 启动失败：
+    # - "443:443"
+    # volumes:
+    #   - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - backend
+
+volumes:
+  trial_videos_data:
+  mysql_data:
+  uploads_data:
+  textbooks_data:
